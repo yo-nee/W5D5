@@ -11,7 +11,7 @@ end
 
 def harrison_ford
   # Consider the following:
-    Movie.select(:id, :title).joins(:castings).where(:actor {:name 'Harrison Ford'})
+    Movie.select(:id, :title).joins(:actors).where(actors: {name: 'Harrison Ford'}).where.not(castings: {ord: 1})
   # Actor
   #   .joins(:movies)
   #   .where(movies: { title: 'Blade Runner' })
